@@ -1,6 +1,8 @@
 FROM php:5.6.40-fpm-alpine
 RUN apk upgrade --update \
-    && apk add --no-cache libzip-dev bzip2-dev postgresql-dev icu-dev libmemcached-dev libxml2-dev libxslt-dev libgcrypt-dev libjpeg-turbo-dev libpng-dev freetype-dev rabbitmq-c-dev libssh2-dev imap-dev libmcrypt-dev git \
+    && apk add --no-cache libzip-dev bzip2-dev postgresql-dev icu-dev libmemcached-dev libxml2-dev \
+        libxslt-dev libgcrypt-dev libjpeg-turbo-dev libpng-dev freetype-dev rabbitmq-c-dev libssh2-dev \
+        imap-dev libmcrypt-dev git subversion \
     && docker-php-ext-configure zip \
     && docker-php-ext-configure gd \
     && printf "\n" | pecl install memcached-2.2.0 \
