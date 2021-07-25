@@ -16,7 +16,7 @@ RUN apk upgrade --update \
     && printf "\n" | pecl install rar \
     && printf "\n" | pecl install dbase-5.1.1 \
     && docker-php-ext-enable memcached memcache redis mongodb amqp ssh2 xdebug rar dbase \
-    && docker-php-ext-install bcmath bz2 calendar exif opcache pdo_mysql pdo_mysql mysql mysqli pdo_pgsql intl zip soap gd xsl pcntl sockets imap mcrypt \
+    && docker-php-ext-install bcmath bz2 calendar exif opcache pdo_mysql pdo_mysql mysql mysqli pgsql pdo_pgsql intl zip soap gd xsl pcntl sockets imap mcrypt \
     && chmod 777 /var/log
 ENV TIDY_VERSION=5.6.0
 RUN apk add --no-cache --virtual .build_package build-base cmake 
